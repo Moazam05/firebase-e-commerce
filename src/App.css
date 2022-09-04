@@ -1,0 +1,81 @@
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 12px !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1;
+  border-radius: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Missing Color Scheme */
+.btn-404,
+.btn-404:focus {
+  background: #78c2ad;
+  border: none;
+  color: white;
+}
+
+.btn-404:hover {
+  background: #78c2ad;
+  color: white;
+}
+
+.btn-404:visited {
+  background: #78c2ad;
+  color: white;
+}
+
+/* React Toastify */
+:root {
+  --toastify-color-success: #78c2ad !important;
+}
+
+/* Home Page Filter */
+@media (min-width: 786px) {
+  .filter-width {
+    width: 275px;
+  }
+}
+
+@media (max-width: 480px) {
+  .filter-wap {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 576px) {
+  .mobile-nav {
+    align-items: flex-start !important
+   ;
+  }
+}
+
+/* Admin */
+.loader-height {
+  width: 100%;
+  min-height: 500px;
+}
+
+.normal-height {
+  width: 100%;
+}
+
+.admin-image-wrap {
+  width: 100px;
+  height: 100px;
+}
+
+.admin-image-wrap img {
+  max-width: 100%;
+  max-height: 100%;
+}

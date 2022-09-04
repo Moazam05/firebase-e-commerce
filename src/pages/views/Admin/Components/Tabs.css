@@ -1,0 +1,50 @@
+.tabs-wrapper {
+  display: flex;
+  border-bottom-width: 1px;
+  border-color: #d1d5db;
+}
+
+.basic-button {
+  display: inline-flex;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-right: 2rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  white-space: nowrap;
+  align-items: center;
+  cursor: pointer;
+  background: transparent;
+}
+
+.isActive {
+  color: #78c2ad;
+  border-color: #6dffd6;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+}
+
+.isActive :focus {
+  color: #78c2ad;
+  border-color: #78c2ad;
+}
+
+.noActive {
+  color: #6b7280;
+  border-color: transparent;
+}
+
+.noActive :hover {
+  color: #4b5563;
+  border-color: #d1d5db;
+}
+
+.noActive :focus {
+  color: #4b5563;
+  border-color: #d1d5db;
+}

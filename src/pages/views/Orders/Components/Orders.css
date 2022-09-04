@@ -1,0 +1,12 @@
+.order-total,
+.order-total:focus {
+  background: #78c2ad;
+  color: white;
+  font-weight: 500;
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+}
+
+.accordion-item:last-of-type .accordion-button.collapsed {
+  background-color: #f2f9f7 !important;
+}

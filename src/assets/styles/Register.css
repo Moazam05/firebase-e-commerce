@@ -1,0 +1,49 @@
+.register-wrapper .section {
+  height: 100vh;
+}
+
+.outer-register {
+  height: 50%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: #78c2ad;
+}
+
+.register-wrapper .card {
+  margin-bottom: 50px;
+}
+
+@media (max-width: 480px) {
+  .register-wrapper .card {
+    margin: 20px;
+    padding: 2rem 1rem !important;
+  }
+}
+
+/* For Login Page Style */
+.login-wrapper .section {
+  height: 100vh;
+  background-color: #78c2ad;
+}
+
+.outer-login {
+  height: 50%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: #e0e0e0;
+}
+
+.login-wrapper .card {
+  margin-bottom: 50px;
+}
+
+@media (max-width: 480px) {
+  .login-wrapper .card {
+    margin: 20px;
+    padding: 2rem 1rem !important;
+  }
+}
