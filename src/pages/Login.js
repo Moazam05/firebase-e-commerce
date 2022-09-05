@@ -156,6 +156,7 @@ const Login = () => {
                               type='submit'
                               className='btn btn-primary btn-lg mt-3 text-white'
                               disabled={isSubmitting}
+                              style={{ width: '150px' }}
                             >
                               {isSubmitting && (
                                 <span className='spinner-border spinner-border-sm mr-1'></span>

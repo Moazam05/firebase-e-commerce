@@ -80,10 +80,15 @@ a {
   max-height: 100%;
 }
 
+* {
+  padding: 0;
+  margin: 0;
+}
+
 body {
   width: 100%;
   min-height: 100vh;
-  background: #78c2ad;
+  background-color: #78c2ad;
   display: flex;
   justify-content: center;
   align-items: center;

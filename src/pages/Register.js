@@ -236,6 +236,7 @@ const Register = () => {
                               type='submit'
                               className='btn btn-primary btn-lg mt-3 text-white'
                               disabled={isSubmitting}
+                              style={{ width: '170px' }}
                             >
                               {isSubmitting && (
                                 <span className='spinner-border spinner-border-sm mr-1'></span>
