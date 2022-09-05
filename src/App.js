@@ -1,15 +1,15 @@
 // React Imports
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 // Custom Imports
 import Home from './pages/views/Home';
-import Login from './pages/Login';
 import Register from './pages/Register';
 import ProductInfo from './pages/views/Home/Components/ProductInfo';
 import Cart from './pages/views/Cart';
 import PageNotFound from './pages/PageNotFound';
 import Orders from './pages/views/Orders';
 import Admin from './pages/views/Admin';
+import Loader from './shared/Loader';
 // Import CSS
 import './App.css';
 // React Toastify
@@ -19,6 +19,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { HomeLayout } from './hooks/HomeLayout';
 import RequireAuth from './hooks/RequireAuth';
 import AuthLayout from './context/AuthLayout';
+const Login = lazy(() => import('./pages/Login'));
 
 const App = () => {
   return (
@@ -27,7 +28,14 @@ const App = () => {
       <Routes>
         {/* Login */}
         <Route element={<HomeLayout />}>
-          <Route path='/login' element={<Login />} />
+          <Route
+            path='/login'
+            element={
+              <Suspense fallback={<Loader />}>
+                <Login />
+              </Suspense>
+            }
+          />
         </Route>
 
         <Route path='/' element={<AuthLayout />}>

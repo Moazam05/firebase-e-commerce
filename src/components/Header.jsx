@@ -13,8 +13,6 @@ import { collection, getDocs } from 'firebase/firestore';
 import firebaseDB from '../firebaseConfig';
 // Redux Imports
 import { useSelector, useDispatch } from 'react-redux';
-// Custom Imports
-import Loader from '../shared/Loader';
 // Context Provider
 import { useAuth } from '../context/useAuth';
 // Store Imports
@@ -30,7 +28,7 @@ const Header = () => {
 
   // States
   const [name, setName] = useState();
-  const [loading, setLoading] = useState(false);
+  const [, setLoading] = useState(false);
 
   const handleLogout = () => {
     logout();
@@ -39,6 +37,7 @@ const Header = () => {
 
   useEffect(() => {
     getName();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
