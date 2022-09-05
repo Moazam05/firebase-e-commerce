@@ -44,6 +44,16 @@ const Home = () => {
     }
   };
 
+  const results = products?.filter((product) =>
+    product.title.toLowerCase().includes(searchKey)
+  );
+  const resultsOpacity = {
+    opacity: 0,
+  };
+  const normalOpacity = {
+    opacity: 1,
+  };
+
   return (
     <Layout loading={loading}>
       <div className='container'>
@@ -80,6 +90,25 @@ const Home = () => {
                 <Cards product={product} />
               </div>
             ))}
+        </div>
+
+        <div
+          className='d-flex align-items-center justify-content-center'
+          style={{ height: '50vh' }}
+        >
+          <h3
+            className='not-found'
+            style={
+              results.length === 0 && loading === false
+                ? normalOpacity
+                : resultsOpacity
+            }
+          >
+            <span>
+              <AiOutlineShoppingCart />
+            </span>
+            Product Not Found
+          </h3>
         </div>
       </div>
     </Layout>
