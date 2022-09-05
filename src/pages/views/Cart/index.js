@@ -159,7 +159,7 @@ const Cart = () => {
                     <div className='column text-lg'>
                       Subtotal:{' '}
                       <span className='text-medium'>
-                        ${cart?.cartTotalAmount}
+                        ${cart?.cartTotalAmount.toFixed(2)}
                       </span>
                     </div>
                   </div>

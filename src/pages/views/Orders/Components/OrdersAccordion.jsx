@@ -65,7 +65,7 @@ const OrdersAccordion = ({ orders }) => {
                       <div>
                         <span style={textColor}>SubTotal:</span>
                         <h5 className='mb-0' style={textColor}>
-                          ${item?.price * item?.cartQuantity}
+                          ${item?.price * item?.cartQuantity.toFixed(2)}
                         </h5>
                       </div>
                     </div>
