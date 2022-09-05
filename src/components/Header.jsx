@@ -63,6 +63,10 @@ const Header = () => {
         };
         namesArray.push(obj);
         setName(namesArray?.filter((item) => item?.email === email));
+        localStorage.setItem(
+          'userName',
+          JSON.stringify(namesArray?.filter((item) => item?.email === email))
+        );
         setLoading(false);
       });
     } catch (error) {
@@ -85,6 +89,8 @@ const Header = () => {
   const activeLink = 'nav-link fw-bold active';
   const normalLink = 'nav-link';
 
+  const welcomeName = JSON.parse(localStorage.getItem('userName'));
+
   return (
     <nav className='navbar navbar-expand-lg navbar-dark bg-primary shadow-lg p-2'>
       <div className='container-fluid'>
@@ -105,7 +111,7 @@ const Header = () => {
         <div className='navbar-collapse collapse' id='navbarColor01'>
           <ul className='navbar-nav ms-auto align-items-center mobile-nav'>
             <li className='nav-item'>
-              {name?.map((item, index) => (
+              {welcomeName?.map((item, index) => (
                 <NavLink
                   className={({ isActive }) =>
                     isActive ? activeLink : normalLink
