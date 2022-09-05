@@ -1,15 +1,16 @@
 /* For Register Page Style */
-.register-wrapper .section {
-  height: 100vh;
-}
-
-.outer-register {
-  height: 50%;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  background-color: #78c2ad;
+.register-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(
+    to top,
+    #e0e0e0 0%,
+    #e0e0e0 50%,
+    #78c2ad 50%,
+    #78c2ad 100%
+  );
+  display: flex;
+  justify-content: center;
 }
 
 .register-wrapper .card {
@@ -24,18 +25,18 @@
 }
 
 /* For Login Page Style */
-.login-wrapper .section {
-  height: 100vh;
-  background-color: #78c2ad;
-}
-
-.outer-login {
-  height: 50%;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  background-color: #e0e0e0;
+.login-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    #78c2ad 0%,
+    #78c2ad 50%,
+    #e0e0e0 50%,
+    #e0e0e0 100%
+  );
+  display: flex;
+  justify-content: center;
 }
 
 .login-wrapper .card {
