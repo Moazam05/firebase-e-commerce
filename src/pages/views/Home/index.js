@@ -80,19 +80,6 @@ const Home = () => {
                 <Cards product={product} />
               </div>
             ))}
-          <div
-            className='d-flex align-items-center justify-content-center'
-            style={{ height: '50vh' }}
-          >
-            {searchKey && (
-              <h3 className='not-found'>
-                <span>
-                  <AiOutlineShoppingCart />
-                </span>{' '}
-                Product Not Found{' '}
-              </h3>
-            )}
-          </div>
         </div>
       </div>
     </Layout>
