@@ -3,7 +3,6 @@ import React, { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 // Custom Imports
 import Home from './pages/views/Home';
-import Register from './pages/Register';
 import ProductInfo from './pages/views/Home/Components/ProductInfo';
 import Cart from './pages/views/Cart';
 import PageNotFound from './pages/PageNotFound';
@@ -20,6 +19,7 @@ import { HomeLayout } from './hooks/HomeLayout';
 import RequireAuth from './hooks/RequireAuth';
 import AuthLayout from './context/AuthLayout';
 const Login = lazy(() => import('./pages/Login'));
+const Register = lazy(() => import('./pages/Register'));
 
 const App = () => {
   return (
@@ -40,7 +40,14 @@ const App = () => {
 
         <Route path='/' element={<AuthLayout />}>
           {/* Public Route */}
-          <Route path='/register' element={<Register />} />
+          <Route
+            path='/register'
+            element={
+              <Suspense fallback={<Loader />}>
+                <Register />
+              </Suspense>
+            }
+          />
 
           {/* Protected Routes */}
           <Route element={<RequireAuth allowedRoles={[1996, 2022]} />}>
