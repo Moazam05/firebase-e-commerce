@@ -8,7 +8,14 @@ const RequireAuth = ({ allowedRoles }) => {
   // Context
   const { user } = useAuth();
 
-  return user && user?.user ? <Outlet /> : <Navigate to='/login' />;
+  return user &&
+    user?.userRoles.find((role) => allowedRoles?.includes(role)) ? (
+    <Outlet />
+  ) : user?.user ? (
+    <Navigate to='/' />
+  ) : (
+    <Navigate to='/login' />
+  );
 };
 
 export default RequireAuth;

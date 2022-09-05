@@ -35,19 +35,19 @@ const App = () => {
           <Route path='/register' element={<Register />} />
 
           {/* Protected Routes */}
-          <Route element={<RequireAuth />}>
+          <Route element={<RequireAuth allowedRoles={[1996, 2022]} />}>
             <Route path='/' element={<Home />} />
           </Route>
-          <Route element={<RequireAuth />}>
+          <Route element={<RequireAuth allowedRoles={[1996]} />}>
             <Route path='/orders' element={<Orders />} />
           </Route>
-          <Route element={<RequireAuth />}>
+          <Route element={<RequireAuth allowedRoles={[2022]} />}>
             <Route path='/admin' element={<Admin />} />
           </Route>
-          <Route element={<RequireAuth />}>
+          <Route element={<RequireAuth allowedRoles={[1996, 2022]} />}>
             <Route path='/cart' element={<Cart />} />
           </Route>
-          <Route element={<RequireAuth />}>
+          <Route element={<RequireAuth allowedRoles={[1996, 2022]} />}>
             <Route path='/productinfo/:id' element={<ProductInfo />} />
           </Route>
         </Route>

@@ -53,7 +53,14 @@ const Login = () => {
         data?.password
       );
 
-      login(result);
+      let roles = '';
+      const userRoles =
+        data?.email === 'admin05@gmail.com'
+          ? (roles = [2022])
+          : // eslint-disable-next-line no-unused-vars
+            (roles = [1996]);
+
+      login({ ...result, userRoles });
       setLoading(false);
     } catch (error) {
       // console.log(error);
