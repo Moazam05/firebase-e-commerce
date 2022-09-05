@@ -3,9 +3,13 @@ import React, { useEffect, useState } from 'react';
 // Custom Imports
 import Layout from '../../../components/Layout';
 import Cards from './Components/Cards';
+// React Icons
+import { AiOutlineShoppingCart } from 'react-icons/ai';
 // Firebase Imports
 import { collection, getDocs } from 'firebase/firestore';
 import firebaseDB from '../../../firebaseConfig';
+// CSS Imports
+import './Components/Cards';
 
 const Home = () => {
   // States
@@ -61,12 +65,9 @@ const Home = () => {
           >
             <option value=''>All</option>
             <option value='headphones'>Headphones</option>
-            <option value='electronics'>Electronics</option>
             <option value='airbeds'>Airbeds</option>
             <option value='speakers'>Speakers</option>
             <option value='watches'>Watches</option>
-            <option value='jewelry'>Jewelry</option>
-            <option value='bags'>Bags</option>
             <option value='jacket'>Jacket</option>
           </select>
         </div>
@@ -79,6 +80,19 @@ const Home = () => {
                 <Cards product={product} />
               </div>
             ))}
+          <div
+            className='d-flex align-items-center justify-content-center'
+            style={{ height: '50vh' }}
+          >
+            {searchKey && (
+              <h3 className='not-found'>
+                <span>
+                  <AiOutlineShoppingCart />
+                </span>{' '}
+                Product Not Found{' '}
+              </h3>
+            )}
+          </div>
         </div>
       </div>
     </Layout>

@@ -179,12 +179,9 @@ const EditProductModal = ({ isEditProduct, productData }) => {
                       className='form-control'
                     >
                       <option value='headphones'>Headphones</option>
-                      <option value='electronics'>Electronics</option>
                       <option value='airbeds'>Airbeds</option>
                       <option value='speakers'>Speakers</option>
                       <option value='watches'>Watches</option>
-                      <option value='jewelry'>Jewelry</option>
-                      <option value='bags'>Bags</option>
                       <option value='jacket'>Jacket</option>
                     </select>
                     {errors?.category?.type === 'required' && (

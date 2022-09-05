@@ -51,9 +51,20 @@ body {
   padding-bottom: 10px;
 }
 
+.not-found {
+  background: white;
+  padding: 2rem 5rem;
+  border-radius: 4px;
+  color: #888888;
+  margin: 0px;
+}
+
 @media (max-width: 480px) {
   .remove-px {
     padding: 0 !important;
+  }
+  .not-found {
+    padding: 1.5rem 3rem !important;
   }
 }
 
