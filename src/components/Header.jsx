@@ -30,7 +30,6 @@ const Header = () => {
 
   // States
   const [name, setName] = useState();
-  const [userName, setUserName] = useState();
   const [loading, setLoading] = useState(false);
 
   const handleLogout = () => {
@@ -46,25 +45,14 @@ const Header = () => {
     dispatch(getTotal());
   }, [cart, dispatch]);
 
-  useEffect(() => {
-    userNameHandler(email);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [name]);
-
   // Local Storage
   const user = JSON.parse(localStorage.getItem('user'));
   const userRoles = JSON.parse(localStorage.getItem('user'));
   const { email } = user?.user;
 
-  // Match Name Function
-  const userNameHandler = (em) => {
-    const tempName = name;
-    const result = tempName?.filter((item) => item.email === em);
-    setUserName(result);
-  };
-
   // Getting Names From Firebase
   const getName = async () => {
+    console.log(email);
     try {
       setLoading(true);
       const names = await getDocs(collection(firebaseDB, 'userName'));
@@ -75,9 +63,9 @@ const Header = () => {
           ...singleData.data(),
         };
         namesArray.push(obj);
+        setName(namesArray?.filter((item) => item?.email === email));
         setLoading(false);
       });
-      setName(namesArray);
     } catch (error) {
       console.log(error);
       setLoading(false);
@@ -118,24 +106,20 @@ const Header = () => {
         <div className='navbar-collapse collapse' id='navbarColor01'>
           <ul className='navbar-nav ms-auto align-items-center mobile-nav'>
             <li className='nav-item'>
-              {loading ? (
-                <Loader />
-              ) : (
-                userName?.map((name, index) => (
-                  <NavLink
-                    className={({ isActive }) =>
-                      isActive ? activeLink : normalLink
-                    }
-                    to='/'
-                    key={index}
-                  >
-                    <span>
-                      <AiOutlineUser fontSize={20} className='ms-2 fw-bold' />
-                    </span>{' '}
-                    {name?.name}
-                  </NavLink>
-                ))
-              )}
+              {name?.map((item, index) => (
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? activeLink : normalLink
+                  }
+                  to='/'
+                  key={index}
+                >
+                  <span>
+                    <AiOutlineUser fontSize={20} className='ms-2 fw-bold' />
+                  </span>{' '}
+                  {item?.name}
+                </NavLink>
+              ))}
             </li>
 
             {userRoles?.userRoles?.map((item, index) => {
