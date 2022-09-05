@@ -31,7 +31,7 @@ const App = () => {
           <Route
             path='/login'
             element={
-              <Suspense fallback={<Loader />}>
+              <Suspense fallback={<Loader color='#fff' />}>
                 <Login />
               </Suspense>
             }
@@ -43,7 +43,7 @@ const App = () => {
           <Route
             path='/register'
             element={
-              <Suspense fallback={<Loader />}>
+              <Suspense fallback={<Loader color='#fff' />}>
                 <Register />
               </Suspense>
             }
