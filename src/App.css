@@ -35,6 +35,24 @@ a {
   color: white;
 }
 
+/* Unauthorized Color Scheme */
+.btn-unauthorized,
+.btn-unauthorized:focus {
+  background: #dc3545;
+  border: none;
+  color: white;
+}
+
+.btn-unauthorized:hover {
+  background: #dc3545;
+  color: white;
+}
+
+.btn-unauthorized:visited {
+  background: #dc3545;
+  color: white;
+}
+
 /* React Toastify */
 :root {
   --toastify-color-success: #78c2ad !important;

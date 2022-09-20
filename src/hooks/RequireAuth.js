@@ -12,7 +12,7 @@ const RequireAuth = ({ allowedRoles }) => {
     user?.userRoles.find((role) => allowedRoles?.includes(role)) ? (
     <Outlet />
   ) : user?.user ? (
-    <Navigate to='/' />
+    <Navigate to='/unauthorized' />
   ) : (
     <Navigate to='/login' />
   );

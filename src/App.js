@@ -18,6 +18,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { HomeLayout } from './hooks/HomeLayout';
 import RequireAuth from './hooks/RequireAuth';
 import AuthLayout from './context/AuthLayout';
+import Unauthorized from './pages/Unauthorized';
 const Login = lazy(() => import('./pages/Login'));
 const Register = lazy(() => import('./pages/Register'));
 
@@ -39,6 +40,7 @@ const App = () => {
         </Route>
 
         <Route path='/' element={<AuthLayout />}>
+          <Route path='unauthorized' element={<Unauthorized />} />
           {/* Public Route */}
           <Route
             path='/register'

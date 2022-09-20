@@ -92,10 +92,7 @@ const Home = () => {
             ))}
         </div>
 
-        <div
-          className='d-flex align-items-center justify-content-center'
-          style={{ height: '50vh' }}
-        >
+        <div className='d-flex align-items-center justify-content-center'>
           <h3
             className='not-found'
             style={
